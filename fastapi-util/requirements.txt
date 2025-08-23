@@ -1,0 +1,7 @@
+fastapi
+youtube_transcript_api
+yt_dlp
+requests
+typing
+re
+langchain

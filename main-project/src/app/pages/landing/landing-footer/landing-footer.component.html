@@ -1,0 +1,33 @@
+<footer>
+  <div class="container">
+    <div class="brand">
+      <h3>TranslateX</h3>
+      <h5 class="">All rights reserved 2025</h5>
+      
+      <br />
+      <app-i18n-language-selector />
+    </div>
+
+    <div class="legal" *transloco="let t; read: 'legal'">
+      <h3>{{ t('title') }}</h3>
+      <ul>
+        @for (page of legalPages; track page) {
+          <li>
+            <a [routerLink]="['/legal', page]" queryParamsHandling="preserve">
+              {{ t(page + '.title') }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="social">
+      <h3>Find Us</h3>
+      <ul>
+        <li><a href="https://twitter.com/" target="_blank">Twitter (X)</a></li>
+        <li><a href="https://www.linkedin.com/company/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

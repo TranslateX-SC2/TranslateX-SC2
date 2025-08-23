@@ -1,0 +1,32 @@
+@use '../../../../../theme/breakpoints' as breakpoints;
+
+.container {
+  display: contents;
+  grid-template-columns: 60% 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 32px;
+  grid-template-areas:
+    'header content'
+    'footer content';
+
+  @media #{breakpoints.$breakpoint-lt-md} {
+    display: initial;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+ion-accordion-group {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+  margin-top: auto;
+}

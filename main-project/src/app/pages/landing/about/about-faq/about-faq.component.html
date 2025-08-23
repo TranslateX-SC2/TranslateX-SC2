@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="header">
+    <h2>FAQ</h2>
+    <p>
+      There are some faq-
+    </p>
+  </div>
+
+  <ion-accordion-group>
+    @for (question of questions; track question) {
+      <ion-accordion>
+        <ion-item slot="header" class="faq-item">
+          <ion-label>{{ question.question }}</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <p>{{ question.answer }}</p>
+          <!-- @if (question.steps) {
+            <ol>
+              @for (step of question.steps; track step) {
+                <li>{{ step }}</li>
+              }
+            </ol>
+          } -->
+        </div>
+      </ion-accordion>
+    }
+  </ion-accordion-group>
+
+  <!-- <div class="footer">
+    <p>Want to ask a different question?</p>
+    <a href="mailto:hello@sign.mt">hello&#64;sign.mt</a>
+  </div> -->
+</div>
