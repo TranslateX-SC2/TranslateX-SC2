@@ -98,4 +98,4 @@ scripts/     # utilities
 MIT License. Maintainer: Your Name — contact@example.com
 
 --- 
-(Attached architecture screenshots are copied into `TranslateX_assets/` alongside this README.)
+
