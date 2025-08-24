@@ -13,17 +13,24 @@ from yt_dlp import YoutubeDL
 import requests
 import re
 from typing import Optional, List
-
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import PromptTemplate
+from langchain_google_genai import  ChatGoogleGenerativeAI
 
 
 from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 # ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY")
-ASSEMBLYAI_API_KEY = "7c3c2a3dc57340f7b72c155326709f25"
+ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY")
+GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
 if not ASSEMBLYAI_API_KEY:
    
     ASSEMBLYAI_API_KEY = None
+
+if not GOOGLE_API_KEY:
+
+    GOOGLE_API_KEY=None
 
 
 
@@ -370,3 +377,16 @@ def transcribe(
 
         time.sleep(poll_interval)
 
+@app.post('/simlify/{text}')
+def simplify(text):
+    llm=ChatGoogleGenerativeAI(model="gemini-2.5-pro", api_key=GOOGLE_API_KEY, temperature=0.7)
+    prompt=PromptTemplate(
+        template="Simplify the text for the sign language to make it easy. Dont change the overall meaning just simplify the sentence construction. The language can be in any language. Return the simplification in the same language\\nText: {text}",
+        input_variables=['text']
+    )
+    parser=StrOutputParser()
+
+    chain=prompt|llm|parser
+
+    output=chain.invoke({"text":text})
+    return output

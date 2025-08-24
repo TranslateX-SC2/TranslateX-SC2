@@ -56,8 +56,13 @@
       <ion-button (click)="openUploadModal()" fill="solid" color="primary" class="toggle-btn">
         Upload File
       </ion-button>
+      
       <ion-button (click)="toggleInputclose()" class="canceltranscribe"  >
         Stop Transcription
+      </ion-button>
+
+      <ion-button (click)="sendsimply()" fill="solid" color="primary" class="toggle-btn">
+        Simplify
       </ion-button>
       
       } @else {
@@ -172,7 +177,7 @@
       <!-- Loader UI -->
        @if (loading){
       <div class="loader-overlay">
-        <ion-spinner name="crescent"></ion-spinner>
+        <ion-spinner name="crescent" class="loading-circle"></ion-spinner>
         <p>Processing... Please wait</p>
       </div>
     }

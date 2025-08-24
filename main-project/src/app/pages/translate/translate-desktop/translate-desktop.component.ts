@@ -268,7 +268,7 @@ onFileSelected(event: Event) {
                 setTimeout(() => {
                   console.log(`Dispatching transcript item ${index + 1}:`, text);
                   this.store.dispatch(new SetSpokenLanguageText(text));
-                }, index * 20000);
+                }, index * 15000);
               });
             } else {
               this.store.dispatch(new SetSpokenLanguageText(String(this.transcriptList)));
@@ -311,7 +311,7 @@ onFileSelected(event: Event) {
             setTimeout(() => {
               console.log(`Dispatching transcript item ${index + 1}:`, text);
               this.store.dispatch(new SetSpokenLanguageText(text));
-            }, index * 20000);
+            }, index * 15000);
           });
         } else {
           this.store.dispatch(new SetSpokenLanguageText(String(response.transcript)));
@@ -324,6 +324,11 @@ onFileSelected(event: Event) {
         alert('Failed to fetch the transcript.');
       },
     });
+  }
+
+
+  sendsimply() {
+    
   }
 
   // 🔹 Dragging Logic
