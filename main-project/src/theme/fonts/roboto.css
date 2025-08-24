@@ -34,3 +34,36 @@
     url(/assets/fonts/roboto/Roboto-normal-500.woff2) format('woff2'),
     url(/assets/fonts/roboto/Roboto-normal-500.woff) format('woff');
 }
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Regular.woff2') format('woff2'),
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Regular.woff') format('woff'),
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Medium.woff2') format('woff2'),
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Medium.woff') format('woff'),
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Bold.woff2') format('woff2'),
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Bold.woff') format('woff'),
+    url('/assets/fonts/bricolage-grotesque/BricolageGrotesque-Bold.ttf') format('truetype');
+}

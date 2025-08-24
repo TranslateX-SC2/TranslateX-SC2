@@ -18,12 +18,32 @@
   grid-area: header;
 }
 
-h1 {
+h2 {
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ion-accordion-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-ion-accordion-group {
-  grid-area: content;
+ion-accordion .faq-item ion-label {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+ion-accordion {
+  max-width: 1200px;      // Set a max width for FAQ cards
+  width: 100%;  
+  border-radius: 18px;
+  font-size: 1.4em;
+  overflow: hidden;
+  margin-bottom: 5px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
 }
 
 .footer {
