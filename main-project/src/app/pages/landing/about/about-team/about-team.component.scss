@@ -1,5 +1,12 @@
 @use '../../../../../theme/breakpoints' as breakpoints;
 
+
+h2 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+
 .container {
   text-align: center;
 }
@@ -28,8 +35,10 @@ ion-avatar {
 }
 
 p {
-  max-width: 468px;
+  max-width: 600px;
   margin: auto;
+  text-align: center;
+  font-size: 1.2em; 
 }
 
 ion-avatar {

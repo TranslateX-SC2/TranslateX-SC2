@@ -2,6 +2,7 @@
 
 h2 {
   text-align: center;
+  font-size: 1.5em;
 }
 
 .cards-container {
@@ -17,12 +18,30 @@ h2 {
   }
 }
 
+ion-card {
+  min-height: 240px; // Make cards taller
+  font-size: 1.4em;  // Make card content bigger
+   // More padding inside cards // Make each card fill its grid cell
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 24px; // Rounded edges
+  overflow: hidden;
+  font-size: 1.3em; 
+}
+
 ion-card-title {
   display: flex;
   align-items: center;
+  font-size: 1.4em; 
 
   a {
     flex-grow: 1;
     text-align: end;
   }
+}
+
+ion-card-content p {
+  font-size: 1.3em;    // Make card content text bigger
 }
