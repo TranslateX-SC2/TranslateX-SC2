@@ -50,10 +50,10 @@ It is modular: swap pose estimators, recognition models, translation modules, TT
 
 ## Architecture (visual)
 **Signed → Spoken**  
-![Signed to Spoken Flow](./TranslateX_assets/583fb025-6cd3-487d-b9a7-b99b19e2babf.jpg)
+![Signed to Spoken Flow](./text-signlang.png)
 
 **Spoken → Signed**  
-![Spoken to Signed Flow](./TranslateX_assets/cd1b1656-689d-4783-977e-d9c8fc435802.jpg)
+![Spoken to Signed Flow](./signlang-text.png)
 
 ---
 
