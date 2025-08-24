@@ -2,12 +2,14 @@
 
 h2 {
   text-align: center;
+  font-size: 2em;
 }
 
 p.subtitle {
-  max-width: 510px;
+  max-width: 700px;
   margin: auto;
   text-align: center;
+  font-size: 1.25em;
 }
 
 .slides {
@@ -58,10 +60,10 @@ ion-card {
     }
 
     &.selected {
-      background-color: white;
+      background-color: #5ec4ff;
       color: black;
       @media (prefers-color-scheme: dark) {
-        background-color: var(--ion-color-dark);
+        background-color: #8fd6ff;
         color: var(--ion-color-dark-contrast);
       }
     }
@@ -81,6 +83,7 @@ ion-card-content {
 
   .info {
     padding: 64px;
+    font-size: 1.35em;
     @media #{breakpoints.$breakpoint-lt-md} {
       padding: 32px;
     }
@@ -126,7 +129,9 @@ ion-card-content {
   }
 
   p {
+    font-size: 1.25em; // Make the text below the heading bigger
     max-width: 600px;
+    margin-bottom: 8px;
   }
 
   app-lazy-map {
