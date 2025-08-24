@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Open Source-projekt",
-          "subtitle": "Sign Translate är ett projekt med öppen källkod, som låter samhället bidra och förbättra dess funktioner.",
+          "subtitle": "TranslateX är ett projekt med öppen källkod, som låter samhället bidra och förbättra dess funktioner.",
           "description": "Genom att dela vår källkod strävar vi efter att främja samarbete och transparens. "
         },
         "offline": {
           "title": "Offline funktionalitet",
-          "subtitle": "Sign Translate fungerar överallt, även offline på ett flygplan.",
+          "subtitle": "TranslateX fungerar överallt, även offline på ett flygplan.",
           "description": "Oavsett om du reser, i ett avlägset område eller utan internet, säkerställer vår app att du alltid kan översätta talat eller skrivet språk till teckenspråk, och ha viktiga kommunikationsverktyg till hands."
         }
       },

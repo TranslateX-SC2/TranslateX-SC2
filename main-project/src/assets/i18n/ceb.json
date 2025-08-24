@@ -10,7 +10,7 @@
     "shift": "Shift"
   },
   "translate": {
-    "title": "Sign Translate",
+    "title": "TranslateX",
     "language-selector": {
       "detected": "{{lang}} - Namatikdan",
       "detect": "Gimatikud ang sinultian",
@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Open Source nga Proyekto",
-          "subtitle": "Ang Sign Translate usa ka open-source nga proyekto, nga nagtugot sa komunidad sa pagtampo ug pagpalambo sa mga feature niini.",
+          "subtitle": "Ang TranslateX usa ka open-source nga proyekto, nga nagtugot sa komunidad sa pagtampo ug pagpalambo sa mga feature niini.",
           "description": "Pinaagi sa pagpaambit sa among source code, gitumong namo nga mapalambo ang kolaborasyon ug transparency. "
         },
         "offline": {
           "title": "Offline nga Pag-andar",
-          "subtitle": "Ang Sign Translate nagtrabaho bisan asa, bisan offline sa eroplano.",
+          "subtitle": "Ang TranslateX nagtrabaho bisan asa, bisan offline sa eroplano.",
           "description": "Kung nagbiyahe ka, sa usa ka hilit nga lugar, o wala’y internet, gisiguro sa among app nga kanunay nimo mahubad ang sinultian o sinulat nga sinultian sa sign language, nga gitipigan ang hinungdanon nga mga himan sa komunikasyon sa imong mga tudlo."
         }
       },

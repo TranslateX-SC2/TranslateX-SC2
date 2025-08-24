@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Projekt open source",
-          "subtitle": "Sign Translate to projekt typu open source, umożliwiający społeczności wnoszenie wkładu i ulepszanie jego funkcji.",
+          "subtitle": "TranslateX to projekt typu open source, umożliwiający społeczności wnoszenie wkładu i ulepszanie jego funkcji.",
           "description": "Udostępniając nasz kod źródłowy, dążymy do wspierania współpracy i przejrzystości. "
         },
         "offline": {
           "title": "Funkcjonalność offline",
-          "subtitle": "Sign Translate działa wszędzie, nawet offline, w samolocie.",
+          "subtitle": "TranslateX działa wszędzie, nawet offline, w samolocie.",
           "description": "Niezależnie od tego, czy podróżujesz, jesteś na odludziu, czy nie masz internetu, nasza aplikacja gwarantuje, że zawsze będziesz w stanie przetłumaczyć język mówiony lub pisany na język migowy, dzięki czemu niezbędne narzędzia komunikacji będą w zasięgu ręki."
         }
       },

@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Avoimen lähdekoodin projekti",
-          "subtitle": "Sign Translate on avoimen lähdekoodin projekti, jonka avulla yhteisö voi osallistua ja parantaa sen ominaisuuksia.",
+          "subtitle": "TranslateX on avoimen lähdekoodin projekti, jonka avulla yhteisö voi osallistua ja parantaa sen ominaisuuksia.",
           "description": "Jakamalla lähdekoodimme pyrimme edistämään yhteistyötä ja avoimuutta. "
         },
         "offline": {
           "title": "Offline-toiminnot",
-          "subtitle": "Sign Translate toimii kaikkialla, myös offline-tilassa lentokoneessa.",
+          "subtitle": "TranslateX toimii kaikkialla, myös offline-tilassa lentokoneessa.",
           "description": "Olitpa matkoilla, syrjäisellä alueella tai ilman internetiä, sovelluksemme varmistaa, että voit aina kääntää puhutun tai kirjoitetun kielen viittomakieleksi pitäen tärkeät viestintävälineet käden ulottuvilla."
         }
       },

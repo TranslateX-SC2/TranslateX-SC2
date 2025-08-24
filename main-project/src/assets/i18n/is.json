@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Open Source verkefni",
-          "subtitle": "Sign Translate er opinn hugbúnaður sem gerir samfélaginu kleift að leggja sitt af mörkum og bæta eiginleika þess.",
+          "subtitle": "TranslateX er opinn hugbúnaður sem gerir samfélaginu kleift að leggja sitt af mörkum og bæta eiginleika þess.",
           "description": "Með því að deila frumkóðanum okkar stefnum við að því að stuðla að samvinnu og gagnsæi. "
         },
         "offline": {
           "title": "Ótengdur virkni",
-          "subtitle": "Sign Translate vinnur alls staðar, jafnvel án nettengingar í flugvél.",
+          "subtitle": "TranslateX vinnur alls staðar, jafnvel án nettengingar í flugvél.",
           "description": "Hvort sem þú ert að ferðast, á afskekktu svæði eða án internets, þá tryggir appið okkar að þú getir alltaf þýtt talað eða ritað mál yfir á táknmál, með nauðsynleg samskiptatæki innan seilingar."
         }
       },

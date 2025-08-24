@@ -10,7 +10,7 @@
     "shift": "Shift"
   },
   "translate": {
-    "title": "Sign Translate",
+    "title": "TranslateX",
     "language-selector": {
       "detected": "{{lang}} - Detekte",
       "detect": "Detekte lang",
@@ -83,7 +83,7 @@
         },
         "open-source": {
           "title": "Pwojè sous louvri",
-          "subtitle": "Sign Translate se yon pwojè sous louvri, ki pèmèt kominote a kontribye ak amelyore karakteristik li yo.",
+          "subtitle": "TranslateX se yon pwojè sous louvri, ki pèmèt kominote a kontribye ak amelyore karakteristik li yo.",
           "description": "Lè nou pataje kòd sous nou an, nou vize ankouraje kolaborasyon ak transparans. "
         },
         "offline": {

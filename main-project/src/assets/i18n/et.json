@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Avatud lähtekoodiga projekt",
-          "subtitle": "Sign Translate on avatud lähtekoodiga projekt, mis võimaldab kogukonnal panustada ja selle funktsioone täiustada.",
+          "subtitle": "TranslateX on avatud lähtekoodiga projekt, mis võimaldab kogukonnal panustada ja selle funktsioone täiustada.",
           "description": "Lähtekoodi jagamisega püüame edendada koostööd ja läbipaistvust. "
         },
         "offline": {
           "title": "Võrguühenduseta funktsionaalsus",
-          "subtitle": "Sign Translate töötab kõikjal, isegi lennukis võrguühenduseta.",
+          "subtitle": "TranslateX töötab kõikjal, isegi lennukis võrguühenduseta.",
           "description": "Olenemata sellest, kas olete reisil, kauges piirkonnas või ilma Internetita, meie rakendus tagab, et saate kõne- või kirjakeele alati viipekeelde tõlkida, hoides olulised suhtlusvahendid teie käeulatuses."
         }
       },

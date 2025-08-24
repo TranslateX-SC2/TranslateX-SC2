@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Proyecto de código abierto",
-          "subtitle": "Sign Translate es un proyecto de código abierto que permite a la comunidad contribuir y mejorar sus funciones.",
+          "subtitle": "TranslateX es un proyecto de código abierto que permite a la comunidad contribuir y mejorar sus funciones.",
           "description": "Al compartir nuestro código fuente, nuestro objetivo es fomentar la colaboración y la transparencia. "
         },
         "offline": {
           "title": "Funcionalidad sin conexión",
-          "subtitle": "Sign Translate funciona en todas partes, incluso sin conexión en un avión.",
+          "subtitle": "TranslateX funciona en todas partes, incluso sin conexión en un avión.",
           "description": "Ya sea que esté de viaje, en un área remota o sin Internet, nuestra aplicación garantiza que siempre pueda traducir el lenguaje hablado o escrito al lenguaje de señas, manteniendo las herramientas de comunicación esenciales a su alcance."
         }
       },

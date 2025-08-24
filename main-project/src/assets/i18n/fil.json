@@ -10,7 +10,7 @@
     "shift": "Shift"
   },
   "translate": {
-    "title": "Sign Translate",
+    "title": "TranslateX",
     "language-selector": {
       "detected": "{{lang}} - Nakita",
       "detect": "Kilalanin ang Wika",
@@ -83,7 +83,7 @@
         },
         "open-source": {
           "title": "Open Source Project",
-          "subtitle": "Ang Sign Translate ay isang open-source na proyekto, na nagpapahintulot sa komunidad na mag-ambag at pahusayin ang mga tampok nito.",
+          "subtitle": "Ang TranslateX ay isang open-source na proyekto, na nagpapahintulot sa komunidad na mag-ambag at pahusayin ang mga tampok nito.",
           "description": "Sa pamamagitan ng pagbabahagi ng aming source code, nilalayon naming itaguyod ang pakikipagtulungan at transparency. "
         },
         "offline": {

@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Projekt otvorenog koda",
-          "subtitle": "Sign Translate je projekt otvorenog koda koji zajednici omogućuje doprinos i poboljšanje njegovih značajki.",
+          "subtitle": "TranslateX je projekt otvorenog koda koji zajednici omogućuje doprinos i poboljšanje njegovih značajki.",
           "description": "Dijeljenjem našeg izvornog koda, cilj nam je poticati suradnju i transparentnost. "
         },
         "offline": {
           "title": "Izvanmrežna funkcionalnost",
-          "subtitle": "Sign Translate radi posvuda, čak i izvan mreže u zrakoplovu.",
+          "subtitle": "TranslateX radi posvuda, čak i izvan mreže u zrakoplovu.",
           "description": "Bilo da putujete, nalazite se na udaljenom području ili nemate internet, naša aplikacija osigurava da uvijek možete prevesti govorni ili pisani jezik u znakovni jezik, držeći osnovne komunikacijske alate na dohvat ruke."
         }
       },

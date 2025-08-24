@@ -83,12 +83,12 @@
         },
         "open-source": {
           "title": "Projekti me burim të hapur",
-          "subtitle": "Sign Translate është një projekt me burim të hapur, i cili lejon komunitetin të kontribuojë dhe të përmirësojë veçoritë e tij.",
+          "subtitle": "TranslateX është një projekt me burim të hapur, i cili lejon komunitetin të kontribuojë dhe të përmirësojë veçoritë e tij.",
           "description": "Duke ndarë kodin tonë burimor, ne synojmë të nxisim bashkëpunimin dhe transparencën. "
         },
         "offline": {
           "title": "Funksionaliteti jashtë linje",
-          "subtitle": "Sign Translate punon kudo, edhe jashtë linje në aeroplan.",
+          "subtitle": "TranslateX punon kudo, edhe jashtë linje në aeroplan.",
           "description": "Pavarësisht nëse jeni duke udhëtuar, në një zonë të largët ose pa internet, aplikacioni ynë siguron që gjithmonë mund të përktheni gjuhën e folur ose të shkruar në gjuhën e shenjave, duke mbajtur në majë të gishtave mjetet thelbësore të komunikimit."
         }
       },

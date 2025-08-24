@@ -10,7 +10,7 @@
     "shift": "Shift"
   },
   "translate": {
-    "title": "Sign Translate",
+    "title": "TranslateX",
     "language-selector": {
       "detected": "{{lang}} - ʻIke ʻia",
       "detect": "Detect language",
@@ -83,7 +83,7 @@
         },
         "open-source": {
           "title": "Pāhana Open Source",
-          "subtitle": "ʻO ka Sign Translate kahi papahana open-source, e ʻae ana i ke kaiāulu e hāʻawi a hoʻonui i kāna mau hiʻohiʻona.",
+          "subtitle": "ʻO ka TranslateX kahi papahana open-source, e ʻae ana i ke kaiāulu e hāʻawi a hoʻonui i kāna mau hiʻohiʻona.",
           "description": "Ma ka kaʻana like ʻana i kā mākou kumu kumu, manaʻo mākou e hoʻoulu i ka laulima a me ka ʻike. "
         },
         "offline": {
