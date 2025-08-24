@@ -53,6 +53,9 @@
         <ion-button (click)="toggleInputBox()" fill="solid" color="primary" class="toggle-btn">
         Youtube Link
       </ion-button>
+      <ion-button (click)="openUploadModal()" fill="solid" color="primary" class="toggle-btn">
+        Upload File
+      </ion-button>
       <ion-button (click)="toggleInputclose()" class="canceltranscribe"  >
         Stop Transcription
       </ion-button>
@@ -94,3 +97,95 @@
     <app-send-feedback />
   </div>
 </ion-content>
+
+<!-- <ion-modal [isOpen]="isUploadModalOpen" (didDismiss)="closeUploadModal()" cssClass="video-modal">
+  <ng-template >
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Upload & Preview Video</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeUploadModal()">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <input type="file" accept="video/mp4" (change)="onFileSelected($event)" />
+
+     @if (videoUrl) {
+        <div class="video-preview">
+        <video [src]="videoUrl" controls width="100%" height="auto"></video>
+      </div>
+    }
+    </ion-content>
+  </ng-template>
+</ion-modal> -->
+
+<!-- <ion-modal 
+  [isOpen]="isUploadModalOpen" 
+  (didDismiss)="closeUploadModal()" 
+  cssClass="video-window-modal">
+  <ng-template>
+    <ion-header class="window-header" 
+                (mousedown)="startDrag($event)" 
+                (touchstart)="startDrag($event)">
+      <ion-toolbar>
+        <ion-title>Upload & Preview Video</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeUploadModal()">✕</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <input type="file" accept="video/mp4" (change)="onFileSelected($event)" />
+
+      @if (videoUrl) {
+        <div class="video-preview">
+          <video [src]="videoUrl" controls width="100%" height="auto"></video>
+        </div>
+      }
+    </ion-content>
+  </ng-template>
+</ion-modal> -->
+
+<ion-modal 
+  [isOpen]="isUploadModalOpen" 
+  (didDismiss)="closeUploadModal()" 
+  cssClass="video-window-modal">
+  <ng-template>
+    <ion-header class="window-header" 
+                (mousedown)="startDrag($event)" 
+                (touchstart)="startDrag($event)">
+      <ion-toolbar>
+        <ion-title>Upload & Preview Video</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeUploadModal()">✕</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+
+      <input type="file" accept="video/mp4,audio/*" (change)="onFileSelected($event)" />
+
+      <!-- Loader UI -->
+       @if (loading){
+      <div class="loader-overlay">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Processing... Please wait</p>
+      </div>
+    }
+
+      <!-- Video Preview -->
+      @if (videoUrl && !loading) {
+        <div class="video-preview">
+          <video [src]="videoUrl" id="uploadedVideo" controls autoplay muted width="100%" height="auto"></video>
+        </div>
+      }
+
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+     

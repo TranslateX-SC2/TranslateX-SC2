@@ -1,4 +1,6 @@
-from fastapi import FastAPI, HTTPException, Request, Query
+from fastapi import FastAPI, HTTPException, Request, UploadFile, File, Query
+import os, requests, time, typing
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from youtube_transcript_api import (
     YouTubeTranscriptApi,
@@ -11,6 +13,20 @@ from yt_dlp import YoutubeDL
 import requests
 import re
 from typing import Optional, List
+
+
+
+from dotenv import load_dotenv
+
+# load_dotenv()
+# ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY")
+ASSEMBLYAI_API_KEY = "7c3c2a3dc57340f7b72c155326709f25"
+if not ASSEMBLYAI_API_KEY:
+   
+    ASSEMBLYAI_API_KEY = None
+
+
+
 
 # optional langchain splitter
 try:
@@ -35,6 +51,33 @@ app.add_middleware(
 # -------------------------
 # Helpers
 # -------------------------
+
+
+def stream_file_to_assemblyai(file_obj, chunk_size: int = 5_242_880) -> str:
+    """
+    Stream a file-like object (binary) to AssemblyAI /v2/upload.
+    Returns the upload_url returned by AssemblyAI.
+    """
+    upload_url = "https://api.assemblyai.com/v2/upload"
+    headers = {"authorization": ASSEMBLYAI_API_KEY}
+
+    def generator():
+        while True:
+            chunk = file_obj.read(chunk_size)
+            if not chunk:
+                break
+            yield chunk
+
+    resp = requests.post(upload_url, headers=headers, data=generator())
+    try:
+        resp.raise_for_status()
+    except Exception as e:
+        raise RuntimeError(f"Upload to AssemblyAI failed: {resp.status_code} {resp.text}") from e
+
+    j = resp.json()
+    return j["upload_url"]
+
+
 
 def extract_yt_id(url_or_id: str) -> Optional[str]:
     """Extract YouTube video ID from URL or return if ID is passed."""
@@ -235,3 +278,95 @@ async def youtube_transcript(request: Request,
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
+    
+
+
+
+
+
+
+
+
+
+@app.post("/transcribe")
+def transcribe(
+    file: UploadFile = File(...),
+    poll_interval: int = 3,
+    timeout: int = 600,
+) -> typing.Dict:
+    """
+    Accepts a file upload (video or audio), streams it to AssemblyAI,
+    requests transcription using the 'universal' speech model, polls until
+    completion, and returns the transcript JSON.
+
+    Query params:
+      - poll_interval: seconds between poll requests (default 3)
+      - timeout: max seconds to wait for transcription (default 600)
+    """
+    if ASSEMBLYAI_API_KEY is None:
+        raise HTTPException(status_code=500, detail="ASSEMBLYAI_API_KEY not configured on server.")
+
+    # Optional: basic content-type check (allow video/* or audio/*)
+    if not (file.content_type and (file.content_type.startswith("video/") or file.content_type.startswith("audio/"))):
+        # not fatal — AssemblyAI accepts many types — but warn user
+        raise HTTPException(status_code=400, detail=f"Unsupported content type: {file.content_type}. Send a video/audio file.")
+
+    try:
+        # Stream upload to AssemblyAI
+        upload_url = stream_file_to_assemblyai(file.file)
+    except RuntimeError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unexpected upload error: {str(e)}")
+
+    # Create transcription job
+    transcript_endpoint = "https://api.assemblyai.com/v2/transcript"
+    headers = {"authorization": ASSEMBLYAI_API_KEY, "content-type": "application/json"}
+
+    payload = {
+        "audio_url": upload_url,
+        "speech_model": "universal", 
+    }
+
+    try:
+        r = requests.post(transcript_endpoint, json=payload, headers=headers)
+        r.raise_for_status()
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"Failed to create transcription job: {r.text if 'r' in locals() else str(e)}")
+
+    job = r.json()
+    transcript_id = job.get("id")
+    if not transcript_id:
+        raise HTTPException(status_code=502, detail=f"Invalid response creating transcription job: {job}")
+
+    polling_endpoint = transcript_endpoint + "/" + transcript_id
+
+    # Polling loop
+    start = time.time()
+    while True:
+        poll_resp = requests.get(polling_endpoint, headers=headers)
+        if poll_resp.status_code != 200:
+            raise HTTPException(status_code=502, detail=f"Polling error: {poll_resp.status_code} {poll_resp.text}")
+
+        poll_json = poll_resp.json()
+        status = poll_json.get("status")
+
+        if status == "completed":
+            text=poll_json.get("text")
+            splitter=RecursiveCharacterTextSplitter(chunk_size=50, chunk_overlap=0)
+            chunks=splitter.create_documents([text])
+            transcript_list=[]
+            for i in chunks:
+                transcript_list.append(i.page_content)
+
+            return JSONResponse({"transcript": transcript_list})
+
+        if status == "error":
+            raise HTTPException(status_code=500, detail=f"Transcription failed: {poll_json.get('error')}")
+
+        elapsed = time.time() - start
+        if elapsed > timeout:
+            raise HTTPException(status_code=504, detail=f"Transcription timed out after {timeout} seconds. Job id: {transcript_id}")
+
+        time.sleep(poll_interval)
+
