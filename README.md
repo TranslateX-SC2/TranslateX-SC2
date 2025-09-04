@@ -95,7 +95,7 @@ scripts/     # utilities
 ---
 
 ## License & Contact
-MIT License. Maintainer: Your Name — contact@example.com
+MIT License. Maintainer: Pixel Paradox
 
 --- 
 
